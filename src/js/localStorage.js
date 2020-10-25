@@ -1,25 +1,13 @@
+
+// Запись выбранной Theme в localStorage
+
 function onCheckClass(e) {
   const lightTheme = bodyRef.classList.contains(Theme.LIGHT);
   const darkTheme = bodyRef.classList.contains(Theme.DARK);
   if (lightTheme) {
-    localStorage.setItem('themeLight', Theme.LIGHT);
-    localStorage.removeItem('themeDark');
+    localStorage.setItem('theme', Theme.LIGHT);
   }
   if (darkTheme) {
-    localStorage.setItem('themeDark', Theme.DARK);
-    localStorage.removeItem('themeLight');
+    localStorage.setItem('theme', Theme.DARK);
   }
 }
-
-function onDarkToggle(e) {
-  localStorage.getItem('themeDark') ? toggleRef.setAttribute('checked', 'true') : toggleRef.removeAttribute('checked');
-  // if (localStorage.getItem('themeDark')) {
-  //   // toggleRef.setAttribute('checked', 'true');
-  //   e.target.checked;
-  // }
-  // // if (localStorage.getItem('themeLight')) {
-  // //   toggleRef.removeAttribute('checked');
-  // // }
-}
-
-export { onCheckClass, onDarkToggle };
